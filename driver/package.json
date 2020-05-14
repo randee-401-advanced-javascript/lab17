@@ -1,0 +1,14 @@
+{
+  "name": "driver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "driver.js",
+  "scripts": {
+    "start": "node driver.js",
+    "lint": "eslint.js",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage"
+  },
+  "author": "",
+  "license": "ISC"
+}
