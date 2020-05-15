@@ -9,7 +9,7 @@ server.listen(3000, () => {
 
 //create socket pool < all the connected sockets
 
-let socketPoo = [];
+let socketPool = [];
 
 //listen to connection events, and do something
 //socket that is trying to connect to server 
