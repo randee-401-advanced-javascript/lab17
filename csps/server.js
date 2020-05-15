@@ -1,11 +1,14 @@
 'use strict';
 
-const net = require('net');
-const server = net.createServer();
+// const net = require('net');
+// const server = net.createServer();
 
-server.listen(3000, () => {
-  console.log('Server is up! WHAT?!');
-}); 
+const sio = require('socket.io');
+const server = sio(3000);
+
+// server.listen(3000, () => {
+//   console.log('Server is up! WHAT?!');
+// }); 
 
 //create socket pool < all the connected sockets
 
