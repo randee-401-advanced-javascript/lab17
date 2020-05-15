@@ -1,4 +1,4 @@
-# lab17
+# lab18
 
 ### Author
 Randee Orion
@@ -10,6 +10,7 @@ Randee Orion
 [Pull down this repo](https://github.com/randee-401-advanced-javascript/lab17)
 
 Then from terminal 
+
 npm start
 in the CPS file first
 then in the Vendor file
