@@ -4,7 +4,7 @@
 Randee Orion
 
 ### Links
-[GitHub Pull Request](https://github.com/randee-401-advanced-javascript/lab17/pull/1)
+[GitHub Pull Request](https://github.com/randee-401-advanced-javascript/lab17/pull/2)
 
 ### To run
 [Pull down this repo](https://github.com/randee-401-advanced-javascript/lab17)
