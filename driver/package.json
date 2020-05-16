@@ -10,5 +10,8 @@
     "test-watch": "jest --watchAll --verbose --coverage"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "socketio": "^1.0.0"
+  }
 }

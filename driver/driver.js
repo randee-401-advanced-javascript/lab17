@@ -1,29 +1,20 @@
 'use strict';
 
-const net = require('net');
-const socket = new net.Socket();
+const io = require('socket.io-client');
+const driverSocket = io.connect('http://localhost:3000/csps');
 
-socket.connect({ port: 3000, host: 'localhost'}, () => {
-  console.log('connected to server');
-});
 
-socket.on('data', (payload) => {
-  let parsed = JSON.parse(payload.toString());
+driverSocket.emit('join', 'driver');
 
-  if(parsed.event === 'pickup') {
-    setTimeout(() => {
-      let newPayload = { event: 'in-transit', order: parsed.order };
-      console.log('picked up order', parsed.order.id);
-      socket.write(JSON.stringify(newPayload));
-    }, 1000);
-  }
-
-  if (parsed.event === 'in-transit') {
+driverSocket.on('pickup', (payload) => {
+  setTimeout(() => {
+    driverSocket.emit('in-transit', payload);
+    console.log('in-transit', payload.orderId);
 
     setTimeout(() => {
-      let newPayload = { event: 'delivered', order: parsed.order };
-      console.log('delivered order', parsed.order.id);
-      socket.write(JSON.stringify(newPayload));
+      driverSocket.emit('delivered', payload);
+      console.log('delivered', payload.orderId);
     }, 3000);
-  }
+  }, 1000);
 });
+
